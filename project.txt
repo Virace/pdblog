@@ -61,5 +61,23 @@ DPBOLG项目计划
 PS：前端"文章类别模板"，可以理解为根据不同类型(动态、文章、图片)显示不同版式。
 还有就是"Shortcode"短代码的实现，是在前端实现还是后端实现？
 						
+表设计：
+		文章(posts);
+			id；
+			author；
+			create_date；
+			content；
+			title；
+			excerpt(摘录列表页显示)；
+			status(文章发布状态)；
+			comment_status(评论状态是否允许评论)；
+			password(文章密码)；
+			modified(修改时间)；
+			type(文章类型)；
+		文章分类等相关信息(terms);
+		评论(comments);
+		用户(users);
+		设置(options);
+		
 		
 		

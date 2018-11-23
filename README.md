@@ -9,3 +9,7 @@
 - pymysql                   0.9.2
 
 具体功能初定 详见project.txt
+
+## 设计
+
+- django app分前端(frontend)、后端(backend)接口

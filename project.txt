@@ -68,16 +68,53 @@ PS：前端"文章类别模板"，可以理解为根据不同类型(动态、文
 			create_date；
 			content；
 			title；
+			name(伪静态使用的名字)；
 			excerpt(摘录列表页显示)；
 			status(文章发布状态)；
 			comment_status(评论状态是否允许评论)；
 			password(文章密码)；
 			modified(修改时间)；
 			type(文章类型)；
-		文章分类等相关信息(terms);
+		文章附加信息(postmeta);
+			id；
+			post_ID；
+			key；
+			value；
+		文章分类等相关信息(terms)这个表存放分类、标签;
+			id；
+			name(显示的名字)；
+			slug(缩略名，用来url访问)；
+			parent(父组)
 		评论(comments);
+			id；
+			post_ID；
+			author；
+			_email(用于不登陆评论)；
+			_url(用于不登陆评论)；
+			IP；
+			date；
+			content；
+			approved(批准)；
+			useragent；
+			parent(父评论嵌套)；
 		用户(users);
+			id；
+			login；
+			pass；
+			nickname；
+			email；
+			url；
+			registered(注册时间)；
+			status(账户状态)；
+		用户附加信息(usermeta);
+			id；
+			user_ID；
+			key；
+			value；
 		设置(options);
+			id；
+			key；
+			value；
 		
 2018年11月24日01点25分
 		

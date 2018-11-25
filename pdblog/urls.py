@@ -20,6 +20,7 @@ from backend import urls
 
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
-    url(r'^api/', include(urls))
+    # xxx.com/api/v1/xxx?xx=xx
+    url(r'^api/(?P<version>[v1|v2]+)/', include(urls))
 ]
 

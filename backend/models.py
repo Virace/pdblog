@@ -9,8 +9,8 @@ class Users(models.Model):
         ('1', '封禁'),
         ('9', '删除')
     )
-    login = models.CharField(verbose_name='用户名', max_length=15, unique=True)
-    passw = models.CharField(verbose_name='密码', max_length=30)
+    login = models.CharField(verbose_name='用户名', max_length=15, unique=True, null=False)
+    passw = models.CharField(verbose_name='密码', max_length=30, null=False)
     nickname = models.CharField(verbose_name='昵称', max_length=15, unique=True)
     email = models.EmailField(verbose_name='邮箱', unique=True)
     url = models.URLField(verbose_name='网址', null=True)

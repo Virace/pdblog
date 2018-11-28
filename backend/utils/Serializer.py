@@ -9,7 +9,7 @@ from rest_framework import serializers
 from backend import models
 
 
-class UserSerializers(serializers.ModelSerializer):
+class UserInfoSerializers(serializers.ModelSerializer):
     # registered = serializers.DateTimeField(verbose_name='注册时间', auto_now_add=True)
     # status = serializers.IntegerField(verbose_name='账户状态', default=0)
     status = serializers.IntegerField(source='get_status_display')
@@ -21,5 +21,8 @@ class UserSerializers(serializers.ModelSerializer):
         # exclude = ('registered', 'status', )
 
 
+class UserTokenSerializers(serializers.ModelSerializer):
 
-
+    class Meta:
+        model = models.UserToken
+        fields = '__all__'

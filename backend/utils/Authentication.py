@@ -7,16 +7,23 @@
 
 from rest_framework.authentication import BaseAuthentication
 from rest_framework import exceptions
-
+from rest_framework import request
 from backend import models
+from backend.utils import Token
 
 
 class UserAuthentication(BaseAuthentication):
     def authenticate(self, request):
         token = request.query_params.get('token')
         token_obj = models.UserToken.objects.filter(token=token).first()
+
         if not token_obj:
             raise exceptions.AuthenticationFailed('用户验证失败')
+
+        tk = Token.UserAuthToken()
+        flag = tk.certify(key=token_obj.user.login, token=token_obj.token)
+        if not flag:
+            raise exceptions.AuthenticationFailed('用户验证信息过期')
         return token_obj.user, token_obj
 
     def authenticate_header(self, request):

@@ -10,8 +10,8 @@ from django.conf.urls import url
 from backend import views
 
 urlpatterns = [
-    url(r'^users/$', views.UsersActionViews.as_view({'get': 'list', 'post': 'create'})),
-    url(r'^users/(?P<pk>\d+)$', views.UsersActionViews.as_view({'get': 'retrieve', 'delete': 'destroy', 'patch': 'partial_update'})),
-    url(r'^auth/$', views.AuthViews.as_view()),
+    url(r'^users/info/$', views.UsersActionViews.as_view({'get': 'list', 'post': 'create'})),
+    url(r'^users/info/(?P<pk>\d+)$', views.UsersActionViews.as_view({'get': 'retrieve', 'delete': 'destroy', 'patch': 'partial_update'})),
+    url(r'^users/auth/$', views.UserAuthViews.as_view()),
 ]
 
